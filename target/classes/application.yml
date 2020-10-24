@@ -1,43 +1,24 @@
-server:
-  port: 8080
-
----
 spring:
   profiles: default
   cloud:
     gateway:
       routes:
-        - id: roommanagement
-          uri: localhost:8083
+        - id: reservationManagement
+          uri: http://localhost:8081
           predicates:
-            - Path=/roommanagements/**
-        - id: reservationmanagement
-          uri: localhost:8081
-          predicates:
-            - Path=/reservationmanagements/**
+            - Path=/reservationManagements/**
         - id: paymentmanagement
-          uri: localhost:8082
+          uri: http://localhost:8082
           predicates:
-            - Path=/paymentmanagements/**
-
----
-spring:
-  profiles: docker
-  cloud:
-    gateway:
-      routes:
+            - Path=/paymentManagements/**
         - id: roommanagement
-          uri: roommanagement:8080
+          uri: http://localhost:8083
           predicates:
-            - Path=/roommanagements/**
-        - id: reservationmanagement
-          uri: reservationmanagement:8080
+            - Path=/roomManagements/**
+        - id: mileageManagement
+          uri: http://localhost:8085
           predicates:
-            - Path=/reservationmanagements/**
-        - id: paymentmanagement
-          uri: paymentmanagement:8080
-          predicates:
-            - Path=/paymentmanagements/**
+            - Path=/mileages/**
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -48,5 +29,39 @@ spring:
             allowedHeaders:
               - "*"
             allowCredentials: true
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: roommanagement
+          uri: http://roommanagement:8080
+          predicates:
+            - Path=/roommanagements/**
+        - id: reservationmanagement
+          uri: http://reservationmanagement:8080
+          predicates:
+            - Path=/reservationmanagements/**
+        - id: paymentmanagement
+          uri: http://paymentmanagement:8080
+          predicates:
+            - Path=/paymentmanagements/**
+        - id: mileagemanagement
+          uri: http://mileagemanagement:8080
+          predicates:
+            - Path=/mileages/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
 server:
   port: 8080
