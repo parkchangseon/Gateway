@@ -7,10 +7,6 @@ spring:
           uri: http://localhost:8081
           predicates:
             - Path=/reservationManagements/**
-        - id: roominfo
-          uri: http://localhost:8084
-          predicates:
-            - Path=/roomInfoes/**
         - id: paymentmanagement
           uri: http://localhost:8082
           predicates:
@@ -19,6 +15,10 @@ spring:
           uri: http://localhost:8083
           predicates:
             - Path=/roomManagements/**
+        - id: roominfo
+          uri: http://localhost:8084
+          predicates:
+            - Path=/roomInfoes/**
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -36,14 +36,6 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: roommanagement
-          uri: http://roommanagement:8080
-          predicates:
-            - Path=/roommanagements/**
-        - id: roominfo
-          uri: http://roominfo:8080
-          predicates:
-            - Path=/roominfoes/**
         - id: reservationmanagement
           uri: http://reservationmanagement:8080
           predicates:
@@ -52,6 +44,14 @@ spring:
           uri: http://paymentmanagement:8080
           predicates:
             - Path=/paymentmanagements/**
+        - id: roommanagement
+          uri: http://roommanagement:8080
+          predicates:
+            - Path=/roommanagements/**
+        - id: roominfo
+          uri: http://roominfo:8080
+          predicates:
+            - Path=/roominfoes/**
       globalcors:
         corsConfigurations:
           '[/**]':
