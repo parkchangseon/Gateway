@@ -15,10 +15,6 @@ spring:
           uri: http://localhost:8083
           predicates:
             - Path=/roomManagements/**
-        - id: mileageManagement
-          uri: http://localhost:8085
-          predicates:
-            - Path=/mileages/**
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -48,10 +44,6 @@ spring:
           uri: http://paymentmanagement:8080
           predicates:
             - Path=/paymentmanagements/**
-        - id: mileagemanagement
-          uri: http://mileagemanagement:8080
-          predicates:
-            - Path=/mileages/**
       globalcors:
         corsConfigurations:
           '[/**]':
