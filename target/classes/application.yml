@@ -15,12 +15,16 @@ spring:
           uri: http://localhost:8083
           predicates:
             - Path=/roomManagements/**
-        - id: roominfo
+        - id: notices
           uri: http://localhost:8084
+          predicates:
+            - Path=/notices/**
+        - id: roomInfoes
+          uri: http://localhost:8085
           predicates:
             - Path=/roomInfoes/**
         - id: couponManagement
-          uri: http://localhost:8085
+          uri: http://localhost:8086
           predicates:
             - Path=/coupons/**
       globalcors:
@@ -52,10 +56,14 @@ spring:
           uri: http://roommanagement:8080
           predicates:
             - Path=/roommanagements/**
-        - id: roominfo
-          uri: http://roominfo:8080
+        - id: notices
+          uri: http://notices:8080
           predicates:
-            - Path=/roominfoes/**
+            - Path=/notices/**
+        - id: roomInfoes
+          uri: http://roomInfoes:8080
+          predicates:
+            - Path=/roomInfoes/**
         - id: couponmanagement
           uri: http://couponmanagement:8080
           predicates:
