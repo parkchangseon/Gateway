@@ -53,7 +53,7 @@ spring:
           predicates:
             - Path=/payments/**
         - id: rooms
-          uri: http://rooms:8080
+          uri: http://room:8080
           predicates:
             - Path=/rooms/**
         - id: notices
@@ -61,7 +61,7 @@ spring:
           predicates:
             - Path=/notices/**
         - id: roomInfoes
-          uri: http://roomInfoes:8080
+          uri: http://roomInfo:8080
           predicates:
             - Path=/roomInfoes/**
         - id: promotionmanagement
