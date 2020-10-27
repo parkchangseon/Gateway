@@ -45,7 +45,7 @@ spring:
     gateway:
       routes:
         - id: reservation
-          uri: http://reservationmanagement:8080
+          uri: http://reservation:8080
           predicates:
             - Path=/reservations/**
         - id: payments
@@ -65,7 +65,7 @@ spring:
           predicates:
             - Path=/roomInfoes/**
         - id: promotionmanagement
-          uri: http://promotionmanagement:8080
+          uri: http://promotion:8080
           predicates:
             - Path=/promotions/**
       globalcors:
