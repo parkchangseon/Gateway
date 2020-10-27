@@ -45,27 +45,27 @@ spring:
     gateway:
       routes:
         - id: reservation
-          uri: http://reservation:8081
+          uri: http://reservation:8080
           predicates:
             - Path=/reservations/**
         - id: payments
-          uri: http://payments:8082
+          uri: http://payments:8080
           predicates:
             - Path=/payments/**
         - id: rooms
-          uri: http://rooms:8083
+          uri: http://room:8080
           predicates:
             - Path=/rooms/**
         - id: notices
-          uri: http://notices:8084
+          uri: http://notices:8080
           predicates:
             - Path=/notices/**
         - id: roomInfoes
-          uri: http://roomInfoes:8085
+          uri: http://roomInfo:8080
           predicates:
             - Path=/roomInfoes/**
         - id: promotionmanagement
-          uri: http://promotion:8086
+          uri: http://promotion:8080
           predicates:
             - Path=/promotions/**
       globalcors:
