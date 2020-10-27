@@ -3,18 +3,18 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: reservationManagement
+        - id: reservation
           uri: http://localhost:8081
           predicates:
-            - Path=/reservationManagements/**
+            - Path=/reservations/**
         - id: payments
           uri: http://localhost:8082
           predicates:
             - Path=/payments/**
-        - id: roommanagement
+        - id: rooms
           uri: http://localhost:8083
           predicates:
-            - Path=/roomManagements/**
+            - Path=/rooms/**
         - id: notices
           uri: http://localhost:8084
           predicates:
@@ -23,10 +23,10 @@ spring:
           uri: http://localhost:8085
           predicates:
             - Path=/roomInfoes/**
-        - id: couponManagement
+        - id: promotionManagement
           uri: http://localhost:8086
           predicates:
-            - Path=/coupons/**
+            - Path=/promotions/**
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -44,18 +44,18 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: reservationmanagement
+        - id: reservation
           uri: http://reservationmanagement:8080
           predicates:
-            - Path=/reservationmanagements/**
+            - Path=/reservations/**
         - id: payments
           uri: http://payments:8080
           predicates:
             - Path=/payments/**
-        - id: roommanagement
-          uri: http://roommanagement:8080
+        - id: rooms
+          uri: http://rooms:8080
           predicates:
-            - Path=/roommanagements/**
+            - Path=/rooms/**
         - id: notices
           uri: http://notices:8080
           predicates:
@@ -64,10 +64,10 @@ spring:
           uri: http://roomInfoes:8080
           predicates:
             - Path=/roomInfoes/**
-        - id: couponmanagement
-          uri: http://couponmanagement:8080
+        - id: promotionmanagement
+          uri: http://promotionmanagement:8080
           predicates:
-            - Path=/coupons/**
+            - Path=/promotions/**
       globalcors:
         corsConfigurations:
           '[/**]':
