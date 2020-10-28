@@ -23,7 +23,7 @@ spring:
           uri: http://localhost:8085
           predicates:
             - Path=/roomInfoes/**
-        - id: promotionManagement
+        - id: promotions
           uri: http://localhost:8086
           predicates:
             - Path=/promotions/**
@@ -64,7 +64,7 @@ spring:
           uri: http://roomInfo:8080
           predicates:
             - Path=/roomInfoes/**
-        - id: promotionmanagement
+        - id: promotion
           uri: http://promotion:8080
           predicates:
             - Path=/promotions/**
